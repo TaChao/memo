@@ -1,0 +1,59 @@
+Arguments: 
+  /snap/node/3292/bin/node /snap/node/3292/bin/yarn.js install --production --ignore-optional --silent
+
+PATH: 
+  /home/chard/.nvm/versions/node/v15.11.0/bin:/home/chard/.cargo/bin:/home/chard/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/go/bin:/home/chard/.antigen/bundles/robbyrussell/oh-my-zsh/lib:/home/chard/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/git:/home/chard/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/heroku:/home/chard/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/pip:/home/chard/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/lein:/home/chard/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/command-not-found:/home/chard/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/docker:/home/chard/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/z:/home/chard/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/kubectl:/home/chard/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/tmux:/home/chard/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/colored-man-pages:/home/chard/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/sudo:/home/chard/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/web-search:/home/chard/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/wd:/home/chard/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/fzf:/home/chard/.antigen/bundles/zsh-users/zsh-autosuggestions:/home/chard/.antigen/bundles/zdharma/fast-syntax-highlighting:/home/chard/.antigen/bundles/joshjon/bliss-zsh:/home/chard/.local/bin:/home/chard/.cargo/bin
+
+Yarn version: 
+  1.22.5
+
+Node version: 
+  12.19.0
+
+Platform: 
+  linux x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/hexo: tunneling socket could not be established, cause=connect ETIMEDOUT 0.0.4.56:80
+      at ClientRequest.onError (/snap/node/3292/lib/cli.js:152235:17)
+      at Object.onceWrapper (events.js:421:26)
+      at ClientRequest.emit (events.js:314:20)
+      at Socket.socketErrorListener (_http_client.js:428:9)
+      at Socket.emit (events.js:314:20)
+      at emitErrorNT (internal/streams/destroy.js:92:8)
+      at emitErrorAndCloseNT (internal/streams/destroy.js:60:3)
+      at processTicksAndRejections (internal/process/task_queues.js:84:21)
+
+npm manifest: 
+  {
+    "name": "hexo-site",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+      "build": "hexo generate",
+      "clean": "hexo clean",
+      "deploy": "hexo deploy",
+      "server": "hexo server"
+    },
+    "hexo": {
+      "version": ""
+    },
+    "dependencies": {
+      "hexo": "^5.0.0",
+      "hexo-generator-archive": "^1.0.0",
+      "hexo-generator-category": "^1.0.0",
+      "hexo-generator-index": "^2.0.0",
+      "hexo-generator-tag": "^1.0.0",
+      "hexo-renderer-ejs": "^1.0.0",
+      "hexo-renderer-marked": "^4.0.0",
+      "hexo-renderer-stylus": "^2.0.0",
+      "hexo-server": "^2.0.0",
+      "hexo-theme-landscape": "^0.0.3"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
