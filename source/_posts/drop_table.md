@@ -1,3 +1,12 @@
+---
+title: drop_table
+date: 2021-09-27 15:20:46
+tags: 
+  - bash 
+  - sudo
+categories:
+  - bash
+---
 
 ```
 #!/bin/bash
