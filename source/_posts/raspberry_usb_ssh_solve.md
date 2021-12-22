@@ -30,7 +30,7 @@ Ubuntu's network manager started to show this icon: enter image description here
 
 Next you will need to locate the static IP address of the Ubuntu host machine. List all interfaces in order to locate the one that does not yet have an IP address via the ifconfig command. Afterwards run:
 
-`sudo ifconfig enp0s20f0u6 192.168.137.3 netmask 255.255.255.0`
+`sudo ifconfig usb0 192.168.137.3 netmask 255.255.255.0`
 In my case enp0s20f0u6 is the interface that was located using the ifconfig command on the Ubuntu host. Then I could manage to connect using the command:
 
 `ssh pi@192.168.137.2`
