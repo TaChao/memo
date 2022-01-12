@@ -1,0 +1,47 @@
+---
+title: convert_doc
+date: 2021-09-27 15:20:46
+tags: 
+  - docker 
+  - sudo
+categories:
+  - docker
+---
+# convert_doc
+```
+CLIENT_ID=${CLIENT_ID:-"1d0c3e06-f627-4352-a1c0-7b7db1282ce0"}
+CLIENT_SECRET=${CLIENT_SECRET:-"ddb32d204a323a38d8096125ef012344"}
+CONVERT_FORMAT=${CONVERT_FORMAT:-"html"}
+CONVERT_FILE=${1}
+
+FILE_NAME="$(basename ${CONVERT_FILE})"
+FILE_PATH=$(readlink -f ${CONVERT_FILE})
+OUT_PATH=${FILE_PATH%/*}
+OUT_FILE=${2:-"$OUT_PATH/${FILE_NAME%.*}.${CONVERT_FORMAT}"}
+
+function get_token {
+    curl -v "https://api.aspose.cloud/connect/token" \
+    -X POST \
+    -d "grant_type=client_credentials&client_id=${CLIENT_ID}&client_secret=${CLIENT_SECRET}" \
+    -H "Content-Type: application/x-www-form-urlencoded" \
+    -H "Accept: application/json"
+}
+
+function convert_doc {
+
+    token="$(echo $(get_token) | jq -r .access_token)"
+
+    # cURL example to convert MS Word Document to PDF
+    curl -v "https://api.aspose.cloud/v4.0/words/convert?format=${CONVERT_FORMAT}" \
+    -X PUT \
+    -F document=@${CONVERT_FILE} \
+    -H "Content-Type: multipart/form-data" \
+    -H "Accept: multipart/form-data" \
+    -H "Authorization: Bearer $token" \
+    -o "${OUT_FILE}"
+}
+
+convert_doc
+echo "=========================FINISH======================="
+echo "Output Path:${OUT_FILE}"
+```
