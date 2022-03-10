@@ -1,0 +1,13 @@
+---
+title: python_base64_image_decode
+date: 2021-09-27 15:20:46
+tags: 
+  - python 
+categories:
+  - python
+---
+
+```
+    im = PILI.open(BytesIO(base64.b64decode(re.sub('^data:image/.+;base64,', '', histogram_img))))
+    im2 = PILI.open(BytesIO(base64.b64decode(re.sub('^data:image/.+;base64,', '', distribution_img))))
+```
